@@ -5,7 +5,7 @@
  * algorithm
  * @list: is a list type listint_t
  */
-void insertion_sort_list(listint_t **list)a
+void insertion_sort_list(listint_t **list)
 {
-
+	
 }
