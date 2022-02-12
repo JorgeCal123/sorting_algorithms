@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <stddef.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -32,5 +33,6 @@ void quick_sort(int *array, size_t size);
 void print_list(const listint_t *list);
 /*print_array.c*/
 void print_array(const int *array, size_t size);
+void quick_sort2(int *array, int low, int high);
 
 #endif /* MAIN_H */
