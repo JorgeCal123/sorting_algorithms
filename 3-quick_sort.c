@@ -47,9 +47,10 @@ int partition (int *array, int low, int high, int size)
 	}
     return (i + 1);
 }
- 
+
 /**
- * recursion_quick_sort - The main function that implements QuickSort witch recursion
+ * recursion_quick_sort - The main function that implements QuickSort
+ * witch recursion
  * @array: Array to be sorted
  * @low: Starting index
  * @high: Ending index 
