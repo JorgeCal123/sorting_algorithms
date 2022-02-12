@@ -1,4 +1,7 @@
 #include "sort.h"
+
+
+
 void swap(int* a, int* b)
 {
     int t = *a;
@@ -6,26 +9,34 @@ void swap(int* a, int* b)
     *b = t;
 }
  
-/* This function takes last element as pivot, places
-the pivot element at its correct position in sorted
-array, and places all smaller (smaller than pivot)
-to left of pivot and all greater elements to right
-of pivot */
-int partition (int *array, int low, int high)
+/** This function takes last element as pivot, places the pivot
+ * element at its correct position in sorted array, and places
+ * all smaller (smaller than pivot
+ *
+ */
+
+int partition (int *array, int low, int high, int size)
 {
     int pivot = array[high];
     int i = (low - 1);
-
-    for (int j = low; j <= high - 1; j++)
+    int j;
+    for (j = low; j <= high - 1; j++)
     {
-
         if (array[j] < pivot)
         {
-            i++;
-            swap(&array[i], &array[j]);
-        }
+		i++;
+		if (i != j)
+		{
+			swap(&array[i], &array[j]);
+			print_array(array, size);
+		}
+	}
     }
-    swap(&array[i + 1], &array[high]);
+	if (pivot < array[i + 1])
+	{    
+		swap(&array[i + 1], &array[high]);
+		print_array(array, size);
+	}
     return (i + 1);
 }
  
@@ -34,17 +45,19 @@ arr[] --> Array to be sorted,
 low --> Starting index,
 high --> Ending index */
 
-void quick_sort2(int *array, int low, int high)
+void recursion_quick_sort(int *array, int low, int high, int size)
 {
     if (low < high)
     {
-        int pi = partition(array, low, high);
+        int pi = partition(array, low, high, size);
 
-        quick_sort2(array, low, pi - 1);
-        quick_sort2(array, pi + 1, high);
+        recursion_quick_sort(array, low, pi - 1, size);
+        recursion_quick_sort(array, pi + 1, high, size);
     }
 }
+
+
 void quick_sort(int *array, size_t size)
 {
-    quick_sort2(array, 0, size-1);
+    recursion_quick_sort(array, 0, size-1, size);
 }

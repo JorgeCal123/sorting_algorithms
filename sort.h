@@ -33,6 +33,11 @@ void quick_sort(int *array, size_t size);
 void print_list(const listint_t *list);
 /*print_array.c*/
 void print_array(const int *array, size_t size);
-void quick_sort2(int *array, int low, int high);
+/*quick_sort.c*/
+void quick_sort(int *array, size_t size);
+void recursion_quick_sort(int *array, int low, int high, int size);
+int partition (int *array, int low, int high, int size);
+void swap(int* a, int* b);
+
 
 #endif /* MAIN_H */
