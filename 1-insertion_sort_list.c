@@ -31,10 +31,12 @@ void insertion_sort_list(listint_t **list)
 
             j = j->prev; 
             if (j->prev != NULL)
-              i = i->prev; 
+              i = i->prev;
+	    if (i>j)
+		    print_list(*list);
 
         }
       i = (i)->next;
-      print_list(*list);
     }
+    print_list(*list);
 }
