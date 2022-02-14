@@ -56,6 +56,7 @@ int partition(int *array, int low, int high, int size)
  * @array: Array to be sorted
  * @low: Starting index
  * @high: Ending index
+ * @size: size of the list
  */
 
 void recursion_quick_sort(int *array, int low, int high, int size)
