@@ -7,36 +7,36 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *i = (*list)->next;
-    listint_t *j = NULL;
-    listint_t *key = NULL;
+	listint_t *i = (*list)->next;
+	listint_t *j = NULL;
+	listint_t *key = NULL;
+	int count = 0;
 
-    while (i)
-    {
+	while (i)
+	{
 
-        key = i;
-        j = i->prev;
-        if((*list)->prev != NULL)
-          (*list) = (*list)->prev;
-        while(j->n > key->n)
-        {
-            j->next = i->next;
-            if (i->next != NULL)
-                i->next->prev = j;
-            i->next = j;
-            i->prev = j->prev;
-            if (j->prev != NULL)
-                j->prev->next = i;
-            j->prev = i;
-
-            j = j->prev; 
-            if (j->prev != NULL)
-              i = i->prev;
-	    if (i>j)
-		    print_list(*list);
-
-        }
-      i = (i)->next;
-    }
-    print_list(*list);
+		key = i;
+		j = i->prev;
+		if ((*list)->prev != NULL)
+			(*list) = (*list)->prev;
+		while (j->n > key->n)
+		{
+			if (count > 0)
+				print_list(*list);
+			j->next = i->next;
+			if (i->next != NULL)
+				i->next->prev = j;
+			i->next = j;
+			i->prev = j->prev;
+			if (j->prev != NULL)
+				j->prev->next = i;
+			j->prev = i;
+			j = j->prev;
+			if (j->prev != NULL)
+				i = i->prev;
+			count += 1;
+		}
+		i = (i)->next;
+	}
+	print_list(*list);
 }
