@@ -38,5 +38,6 @@ void insertion_sort_list(listint_t **list)
 		}
 		i = (i)->next;
 	}
-	print_list(*list);
+	if (count > 0)
+		print_list(*list);
 }
