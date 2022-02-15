@@ -37,7 +37,7 @@ void print_array(const int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void recursion_quick_sort(int *array, int low, int high, int size);
 int partition (int *array, int low, int high, int size);
-void swap(int* a, int* b);
+void swap(int *a, int *b);
 /*shell_sort.c*/
 void shell_sort(int *array, size_t size);
 
